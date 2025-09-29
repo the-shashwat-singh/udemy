@@ -3,9 +3,9 @@ import thumbnailImage from "@/assets/thumbnail.webp";
 
 const CourseSidebar = () => {
   return (
-    <div className="space-y-4 w-full">
+    <div className="space-y-0.5 w-full lg:w-80">
       {/* Certificate Recipient */}
-      <div className="p-4 bg-white rounded-lg border border-gray-200">
+        <div className="p-4">
         <h3 className="font-semibold text-udemy-gray-dark mb-3 text-sm sm:text-base">Certificate Recipient:</h3>
         <div className="flex items-center space-x-3">
           <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center">
@@ -16,13 +16,14 @@ const CourseSidebar = () => {
       </div>
 
       {/* Course Info */}
-      <div className="p-4 bg-white rounded-lg border border-gray-200 space-y-3">
+      <div className="p-4 space-y-3">
         <h3 className="font-semibold text-udemy-gray-dark mb-3 text-sm sm:text-base">About the Course:</h3>
         
         <img 
           src={thumbnailImage} 
           alt="Course Thumbnail" 
-          className="w-full h-32 sm:h-48 object-cover rounded-lg"
+          style={{ maxWidth: '286px', height: '192px' }}
+          className="object-cover"
         />
         
         <div className="space-y-2">
@@ -54,13 +55,16 @@ const CourseSidebar = () => {
       </div>
 
       {/* Action Buttons */}
-      <div className="p-4 bg-white rounded-lg border border-gray-200">
+        <div className="p-4">
         <button 
-          className="border font-bold text-sm flex items-center justify-center rounded-md transition-colors duration-200 hover:bg-opacity-10 w-full sm:w-auto px-4 py-2" 
+          className="border font-bold text-sm flex items-center justify-center rounded-md transition-colors duration-200 hover:bg-opacity-10" 
           style={{ 
+            width: '126.46px',
+            height: '38px',
             borderColor: 'oklch(48.41% 0.2342 293.93deg)', 
             color: 'oklch(48.41% 0.2342 293.93deg)',
-            backgroundColor: 'transparent'
+            backgroundColor: 'transparent',
+            padding: '8px 6px'
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.backgroundColor = 'oklch(48.41% 0.2342 293.93deg / 0.1)';
@@ -71,7 +75,7 @@ const CourseSidebar = () => {
           onClick={() => {
             const link = document.createElement('a');
             link.href = '/src/assets/certificate.png';
-            link.download = 'certificate.png';
+            link.download = 'certificate-pradyumna.png';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
